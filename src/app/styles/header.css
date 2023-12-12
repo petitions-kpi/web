@@ -1,0 +1,16 @@
+.wrapper {
+  margin-top: -30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  max-width: 350px;
+}
+
+p.text {
+  margin-top: -20px;
+  font-family: 'Bicubik';
+  font-size: 65px;
+}
