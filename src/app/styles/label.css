@@ -1,0 +1,16 @@
+.label {
+  background-color: #000;
+  width: 440px;
+  margin: 0 auto;
+  margin-top: -90px;
+  margin-bottom: 31px;
+  border-radius: 20px;
+}
+
+p.title {
+  color: #fff;
+  text-align: center;
+  font-family: 'Bicubik';
+  font-size: 40px;
+  padding: 2% 0;
+}
