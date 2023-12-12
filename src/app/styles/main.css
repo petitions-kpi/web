@@ -1,0 +1,62 @@
+body {
+  @apply overflow-hidden m-0;
+}
+.slide {
+  @apply bg-white flex flex-row justify-center w-full h-full overflow-hidden;
+}
+.slide .div {
+  @apply bg-white h-[1024px] relative w-[1440px] overflow-hidden;
+}
+.slide .overlap {
+  @apply h-[382px] absolute w-[940px] left-10 top-0;
+}
+.slide .overlap-group {
+  @apply h-[382px] absolute w-[940px] left-0 top-0;
+}
+.slide .overlap-group-2 {
+  @apply h-[382px] absolute w-[389px] left-0 top-0;
+}
+.slide .logo {
+  @apply h-[300px] object-cover absolute w-[351px] left-0 top-0;
+}
+.slide .rectangle {
+  @apply bg-[#7d7d7d] h-[70px] absolute w-[352px] rounded-[40px] left-[37px] top-[312px];
+}
+.slide .text-wrapper {
+  @apply text-white text-3xl font-light tracking-[0] leading-[normal] absolute w-[226px] left-[103px] top-[327px];
+  font-family: Raleway, ui-serif;
+}
+.slide .text-wrapper-2 {
+  @apply text-black text-[40px] font-normal tracking-[0] leading-[normal] absolute left-[377px] top-[130px];
+  font-family: Bicubik, ui-serif;
+}
+.slide .div-wrapper {
+  @apply bg-[#7d7d7d] h-[70px] absolute w-[352px] rounded-[40px] left-[461px] top-[312px];
+}
+.slide .text-wrapper-3 {
+  @apply text-white text-3xl font-light tracking-[0] leading-[normal] absolute w-[267px] left-[58px] top-[15px];
+  font-family: Raleway, ui-serif;
+}
+.slide .overlap-2 {
+  @apply bg-[#7d7d7d] h-[70px] absolute w-[426px] left-[1001px] top-[122px];
+}
+.slide .text-wrapper-4 {
+  @apply text-[#fffbfb] text-3xl font-normal tracking-[0] leading-[normal] absolute w-[327px] left-[19px] top-[15px];
+  font-family: Bicubik, ui-serif;
+}
+.slide .rectangle-2 {
+  @apply bg-[#d9d9d9] h-[490px] absolute w-[346px] left-[83px] top-[394px];
+}
+.slide .overlap-3 {
+  @apply h-[564px] absolute w-[932px] left-[508px] top-[382px];
+}
+.slide .rectangle-3 {
+  @apply bg-[#d9d9d9] h-[490px] absolute w-[345px] left-0 top-3;
+}
+.slide .main-image {
+  @apply h-[505px] object-cover absolute w-[650px] left-[290px] top-0;
+}
+.button {
+  @apply bg-[#131c22ae] h-[70px] absolute w-[426px] left-[1015px] top-[118px] text-white text-2xl font-normal cursor-pointer transition-[background-color] duration-[0.3s] ease-[ease] px-20 py-2.5 rounded-[5px] border-[none] hover:bg-[#000000];
+  font-family: Bicubik, ui-serif;
+}
