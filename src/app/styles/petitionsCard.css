@@ -1,0 +1,31 @@
+.petitionCard {
+    background-color: #FBFBFF;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .petitionCard h3 {
+    color: #000;
+    font-size: 20px;
+    font-family: Bicubik, ui-serif;
+  }
+  
+  .petitionCard p {
+    color: #000;
+  }
+  .petitionCard .line {
+    height: 1px;
+    background-color: #000;
+    margin: 5px 0;
+  }
+  .petitionDetails {
+    display: flex;
+    justify-content: space-between;
+  }
+  .signaturesCount {
+    font-size: 12px;
+    font-weight: bold;
+    color: #888;
+  }
+  

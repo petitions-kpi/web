@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/main.css';
 import Link from 'next/link';
 
 const Button : React.FC = () => {

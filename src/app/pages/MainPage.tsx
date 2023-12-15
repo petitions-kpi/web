@@ -2,6 +2,7 @@
 
 import "../styles/main.css"
 import Button from './Button'
+import Petitions from "../components/PetitionsBox"
 
 const MainPage = () => {
     return (
@@ -20,10 +21,12 @@ const MainPage = () => {
                         <div className="text-wrapper-3">Популярні петиції</div>
                     </div>
                 </div>
-                <Button/>
-                <div className="rectangle-2" />
-                <div className="overlap-3">
-                    <div className="rectangle-3" />
+                <Button />
+                <div className="main-container">
+                    <div className="main-petition">
+                        <Petitions sortOrder="active" />
+                        <Petitions sortOrder="popular" />
+                    </div>
                     <img className="main-image" alt="Main image" src="/img/main-image-1.png" />
                 </div>
             </div>
