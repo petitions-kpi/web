@@ -67,7 +67,7 @@ const SignIn = () => {
 
                     <p className="mt-10 text-center text-sm text-gray-500">
                         Не маєш акаунту?{' '}
-                        <a href="#" className="font-semibold leading-6 text-black hover:text-gray-500">
+                        <a href="/sign-up" className="font-semibold leading-6 text-black hover:text-gray-500">
                             Зареєструватися
                         </a>
                     </p>

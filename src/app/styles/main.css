@@ -48,6 +48,12 @@ body {
   @apply bg-[#d9d9d9] h-[490px] w-[346px] left-[83px] top-[394px];
 }
 
+
+.slide .text-wrapper-3 {
+  @apply text-white text-3xl font-light tracking-[0] leading-[normal] absolute w-[267px] left-[58px] top-[15px];
+  font-family: Raleway, ui-serif;
+}
+
 .main-petition {
   display: flex;
   flex-direction: row;
