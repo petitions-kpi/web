@@ -3,6 +3,7 @@
 import "../styles/main.css"
 import Button from './Button'
 import Petitions from "../components/PetitionsBox"
+import AllPetitions from "@/app/pages/all-petitions";
 
 const MainPage = () => {
     return (
@@ -22,6 +23,7 @@ const MainPage = () => {
                     </div>
                 </div>
                 <Button />
+                <AllPetitions />
                 <div className="main-container">
                     <div className="main-petition">
                         <Petitions sortOrder="active" />
