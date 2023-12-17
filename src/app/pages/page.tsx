@@ -5,7 +5,8 @@ import Button from './Button'
 import Petitions from "../components/PetitionsBox"
 import AllPetitions from "@/app/pages/all-petitions";
 
-const MainPage = () => {
+const Page = () => {
+
     return (
         <div className="slide">
             <div className="div">
@@ -36,4 +37,4 @@ const MainPage = () => {
     )
 }
 
-export default MainPage;
+export default Page;
