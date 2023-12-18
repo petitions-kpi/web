@@ -41,6 +41,9 @@ const PetitionView = async () => {
         }
       });
       const signData = await resSign.json();
+      if (resSign.ok) {
+        alert('Підписано');
+      }
       if (signData.statusCode === 409) {
         alert(signData.message);
       }
@@ -54,6 +57,14 @@ const PetitionView = async () => {
   try {
     const response = await fetch(`https://petitions-api.onrender.com/v1/petitions/${id}`, {method: 'GET'});
     data = await response.json();
+    for (const item of data.signatures) {
+      const date = new Date(item.date);
+      const day = date.getUTCDate().toString().padStart(2, '0');
+      const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); 
+      const year = date.getUTCFullYear();
+      const formattedDate = `${day}.${month}.${year}`;
+      item.date = formattedDate;
+    }
   } catch (err) {
     console.log(err);
   }
@@ -63,6 +74,19 @@ const PetitionView = async () => {
   const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); 
   const year = date.getUTCFullYear();
   const formattedDate = `${day}.${month}.${year}`;
+
+  const signatures = data['signatures'].map((item: any) => (
+    <div className="signatures">
+      <div>
+        <span className="info">Ім'я: </span>
+        <span className="data">{item.firstName} {item.lastName}</span>
+      </div>
+      <div>
+        <span className="info">Дата підписання: </span>
+        <span className="data">{item.date}</span>
+      </div>
+    </div>
+  ));
 
   return (
     <div className="content">
@@ -86,6 +110,7 @@ const PetitionView = async () => {
             <span className="data">{formattedDate}</span>
           </div>
           <hr />
+          {signatures}
       </div>
       <div className="button">
         <button onClick={signPetition}>Підписати</button>
