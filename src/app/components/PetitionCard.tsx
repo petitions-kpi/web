@@ -1,11 +1,11 @@
-import getAllPetitions from "../lib/api/petitions/PetitionsAPI";
+import PetitionService from "../lib/api/petitions/PetitionsAPI";
 import "../styles/petitionsCard.css";
-import Petition from "../lib/api/petitions/types/GetPetitionsBody";
+import Petition from "../lib/api/petitions/types/GetPetitionsBody"
 import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 
 async function getPetitions(prop: string): Promise<Petition[]> {
-  const petitions = await getAllPetitions();
+  const petitions = await PetitionService.getAllPetitions();
 
   if (prop === "active") {
     return getSignInPetitions(petitions);
