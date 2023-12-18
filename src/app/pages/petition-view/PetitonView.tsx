@@ -1,7 +1,52 @@
-"use client"
+'use client';
 import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+import { setToken } from '@/app/lib/api/auth/LocalStorageService';
 
 const PetitionView = async () => {
+  const router = useRouter();
+
+  const signPetition = async () => {
+    const accessToken = localStorage.getItem('accessToken');
+    const refreshToken = localStorage.getItem('refreshToken');
+    const res = await fetch(apiUrl + '/auth/me', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      } 
+    });
+    const data = await res.json();
+    if (data.statusCode === 401) {
+      const res = await fetch(apiUrl + '/auth/refresh/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${refreshToken}`
+        }
+      });
+      const data = await res.json();
+      if (data.statusCode === 404) {
+        router.push('/sign-in');
+      } else {
+        setToken('accessToken', data['accessToken']);
+        setToken('refreshToken', data['refreshToken']);
+        signPetition();
+      }
+    } else {
+      const resSign = await fetch(apiUrl + `/petitions/${id}/sign`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      });
+      const signData = await resSign.json();
+      if (signData.statusCode === 409) {
+        alert(signData.message);
+      }
+    }
+  }
+
   const searchParams = useSearchParams()
   const id = searchParams.get('id')
 
@@ -43,7 +88,7 @@ const PetitionView = async () => {
           <hr />
       </div>
       <div className="button">
-        <button>Підписати</button>
+        <button onClick={signPetition}>Підписати</button>
       </div>
     </div>
   );
