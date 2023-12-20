@@ -3,7 +3,6 @@ import PetitionService from "../lib/api/petitions/PetitionsAPI"
 import Petition from "../lib/api/petitions/types/GetPetitionsBody"
 import React, { useEffect, useState } from 'react';
 import Link from "next/link";
-import "../styles/petitions.css"
 
 async function getPetitions(prop: string): Promise<Petition[]> {
   const petitions = await PetitionService.getAllPetitions();
