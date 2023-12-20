@@ -12,7 +12,7 @@ export const Login = async (email: string, password: string) => {
 
     return axios.post(`${apiUrl}/auth/login`, requestBody)
         .then((response: AxiosResponse<Tokens>) => {
-            if (response.status === 200) {
+            if (response.status === 201) {
                 setToken('accessToken', response.data.accessToken);
                 setToken('refreshToken', response.data.refreshToken);
                 return response.data;
